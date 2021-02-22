@@ -1,0 +1,29 @@
+<h1>Mersen#output</h1>
+ <p>Finded numbers</p>
+
+<p id="count">
+    <% if @result.empty? %>
+        <%= 'Error input' %>
+    <% else %>
+        <%= "Count: #{@count}"%>
+    <% end %>
+</p>
+
+<p id="res_table"></p>
+<table border="1">
+    <tr>
+        <th>№</th>
+        <th>Numbers</th>
+    </tr>
+    <% @result.each do |row| %>
+    <tr>
+        <% row.each do |value| %>
+        <td>
+            <%= value %>
+        </td>
+        <% end %>
+    </tr>
+    <% end %>
+</table>
+
+<p> <%= link_to "Input another value:", :mersen_input %> </p>
